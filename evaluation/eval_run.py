@@ -53,7 +53,7 @@ def eval_one(image_set, iter, eval_mode, anno, bbox):
 	# % get HOI index intervals for object classes
 	obj_hoi_int = np.zeros([len(list_coco_obj), 2])
 	for i in range(len(list_coco_obj)):
-		hoi_int = [j for j, tem in enumerate(list_action) if list_coco_obj[i] in str(tem[0][0][0])]
+		hoi_int = [j for j, tem in enumerate(list_action) if list_coco_obj[i]==str(tem[0][0][0])]
 		assert len(hoi_int)>0
 		obj_hoi_int[i, 0] = hoi_int[0]
 		obj_hoi_int[i, 1] = hoi_int[-1]
